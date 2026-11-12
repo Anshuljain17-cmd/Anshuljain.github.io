@@ -193,13 +193,3 @@
     transition: none;
   }
 }
-
-/* Homepage and About copy refinements */
-.portfolio-home-headline { max-width: 680px; font-size: 25px; line-height: 1.45; font-weight: 700; }
-.portfolio-home-intro { max-width: 650px; margin-top: 14px; color: rgba(255,255,255,.86); font-size: 15px; line-height: 1.8; }
-.portfolio-about-skills .portfolio-skill-tags { margin-top: 12px; }
-.portfolio-about-skills .portfolio-skill-tags span { margin: 0; }
-#resume-section .resume-wrap { height: auto; }
-#resume-section .resume-wrap ul { padding-left: 20px; }
-#resume-section .resume-wrap li { margin-bottom: 8px; line-height: 1.65; }
-@media (max-width: 767px) { .portfolio-home-headline { font-size: 21px; } .portfolio-home-intro { font-size: 14px; } }
