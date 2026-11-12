@@ -203,3 +203,20 @@
 #resume-section .resume-wrap ul { padding-left: 20px; }
 #resume-section .resume-wrap li { margin-bottom: 8px; line-height: 1.65; }
 @media (max-width: 767px) { .portfolio-home-headline { font-size: 21px; } .portfolio-home-intro { font-size: 14px; } }
+
+/* Freelance services and clearer homepage calls to action */
+.portfolio-hero-hire { margin-left: 8px; }
+.portfolio-freelance-section { position: relative; }
+.portfolio-service-card { height: 100%; padding: 24px 20px; background: #1a1a1a; border: 1px solid rgba(255,189,57,.18); border-radius: 12px; transition: transform .25s ease, border-color .25s ease; }
+.portfolio-service-card:hover { transform: translateY(-4px); border-color: rgba(255,189,57,.7); }
+.portfolio-service-card h3 { color: #fff; font-size: 19px; margin: 8px 0 12px; }
+.portfolio-service-card p, .portfolio-service-card li { color: #b8b8b8; font-size: 13px; line-height: 1.7; }
+.portfolio-service-card ul { padding-left: 18px; margin: 12px 0 0; }
+.portfolio-freelance-note { margin-top: 16px; }
+.portfolio-freelance-note p { color: #c5c5c5; }
+.portfolio-collab-cta { background: #171717; }
+.portfolio-collab-cta h2 { color: #fff; font-size: 30px; margin-bottom: 12px; }
+.portfolio-collab-cta h2 span { color: #ffbd39; }
+.portfolio-collab-cta p { color: #b8b8b8; margin-bottom: 24px; }
+.portfolio-collab-cta .btn { margin: 5px; }
+@media (max-width: 767px) { .portfolio-hero-hire { margin: 10px 0 0; } .portfolio-collab-cta h2 { font-size: 24px; } }
