@@ -1,0 +1,195 @@
+/* Portfolio skills and project filters — additions to the existing theme */
+.portfolio-skills-section,
+.portfolio-projects-section {
+  position: relative;
+}
+
+.portfolio-skill-card {
+  height: 100%;
+  padding: 30px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 189, 57, 0.16);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portfolio-skill-card:hover,
+.portfolio-project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 189, 57, 0.65);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-skill-kicker,
+.portfolio-project-number {
+  display: block;
+  margin-bottom: 12px;
+  color: #ffbd39;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.portfolio-skill-card h3,
+.portfolio-project-card h3 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.portfolio-skill-card p,
+.portfolio-project-card p {
+  color: #b8b8b8;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.portfolio-skill-tags,
+.portfolio-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.portfolio-skill-tags span,
+.portfolio-project-tags span {
+  display: inline-block;
+  padding: 7px 11px;
+  color: #e7e7e7;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.portfolio-learning-note {
+  display: inline-block;
+  margin-top: 18px;
+  color: #ffbd39;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.portfolio-project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto 12px;
+}
+
+.portfolio-filter-btn {
+  padding: 10px 19px;
+  color: #f1f1f1;
+  background: transparent;
+  border: 1px solid rgba(255, 189, 57, 0.45);
+  border-radius: 24px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.portfolio-filter-btn:hover,
+.portfolio-filter-btn.is-active {
+  color: #1a1a1a;
+  background: #ffbd39;
+  border-color: #ffbd39;
+}
+
+.portfolio-filter-btn:focus-visible,
+.portfolio-project-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.portfolio-filter-status {
+  margin: 0 0 28px;
+  color: #aaa;
+  text-align: center;
+  font-size: 12px;
+}
+
+.portfolio-project-card {
+  height: 100%;
+  min-height: 300px;
+  padding: 27px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 189, 57, 0.16);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portfolio-project-category {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: #ffbd39;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.portfolio-project-card h3 {
+  min-height: 52px;
+  font-size: 19px;
+}
+
+.portfolio-project-card p {
+  min-height: 96px;
+  margin-bottom: 0;
+}
+
+.portfolio-project-tags {
+  margin: 16px 0 20px;
+}
+
+.portfolio-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffbd39;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.portfolio-project-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.portfolio-project-item[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .portfolio-skill-card,
+  .portfolio-project-card {
+    padding: 23px;
+  }
+
+  .portfolio-project-card {
+    min-height: auto;
+  }
+
+  .portfolio-project-card h3,
+  .portfolio-project-card p {
+    min-height: 0;
+  }
+
+  .portfolio-filter-btn {
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-skill-card,
+  .portfolio-project-card,
+  .portfolio-filter-btn {
+    transition: none;
+  }
+}
