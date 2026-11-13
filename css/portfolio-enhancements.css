@@ -220,3 +220,13 @@
 .portfolio-collab-cta p { color: #b8b8b8; margin-bottom: 24px; }
 .portfolio-collab-cta .btn { margin: 5px; }
 @media (max-width: 767px) { .portfolio-hero-hire { margin: 10px 0 0; } .portfolio-collab-cta h2 { font-size: 24px; } }
+
+/* Portfolio roadmap and freelance engagement options */
+.portfolio-planned-card { border-style: dashed; }
+.portfolio-project-status { display: inline-block; color: #d6b36e; font-size: 12px; cursor: default; }
+.portfolio-engagement-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin: 12px 0 24px; }
+.portfolio-engagement-options > div { background: #191919; border: 1px solid rgba(255,189,57,.2); border-radius: 10px; padding: 20px; }
+.portfolio-engagement-options strong, .portfolio-engagement-options span { display: block; }
+.portfolio-engagement-options strong { color: #ffbd39; margin-bottom: 8px; }
+.portfolio-engagement-options span { color: #b8b8b8; font-size: 13px; line-height: 1.7; }
+@media(max-width:767px){.portfolio-engagement-options{grid-template-columns:1fr}}
