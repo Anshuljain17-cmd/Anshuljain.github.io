@@ -25,10 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (status) {
       const label = selectedFilter === "all"
-        ? "projects"
+        ? "projects and planned builds"
         : selectedFilter === "analyst"
           ? "Data Analyst projects"
-          : "Data Scientist projects";
+          : selectedFilter === "scientist"
+            ? "Data Science builds"
+            : "AI Engineering builds";
 
       status.textContent = "Showing " + visibleCount + " " + label;
     }
