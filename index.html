@@ -1,645 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Anshul Jain Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anshul Jain is a Data Analyst focused on SQL, Python, Power BI, Tableau, survey analytics and practical business intelligence.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Anshul Jain | Data Analyst &amp; BI Professional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root{--gold:#ffbd39;--bg:#0a0a0a;--surface:#141414;--surface2:#1a1a1a;--white:#f7f7f7;--muted:#aaa;--line:rgba(255,189,57,.2);--max:1160px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
+    a{color:inherit}
+    .container{width:min(var(--max),90%);margin:auto}
+    .site-header{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(8,8,8,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav-wrap{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-size:1.35rem;font-weight:800;text-decoration:none;letter-spacing:-.5px}.brand span{color:var(--gold)}
+    .nav-links{display:flex;gap:26px;list-style:none}.nav-links a{text-decoration:none;color:#ddd;font-size:.85rem;transition:color .2s}.nav-links a:hover,.nav-links a:focus{color:var(--gold)}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--gold);border-radius:8px;padding:9px 12px;font-size:1.1rem}
+    .hero{min-height:760px;min-height:100svh;display:flex;align-items:center;padding:130px 0 90px;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.82) 54%,rgba(0,0,0,.55) 100%),url('images/bg_1.jpg') center/cover no-repeat}
+    .hero-copy{max-width:760px}.eyebrow{display:inline-block;color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+    h1{font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.12;letter-spacing:-2px;margin:18px 0}
+    h1 span,.gold{color:var(--gold)}.hero h2{font-size:clamp(1.15rem,2.6vw,1.7rem);font-weight:500;color:#e5e5e5;margin-bottom:18px}
+    .hero p{max-width:660px;color:#c2c2c2;font-size:1rem;margin-bottom:30px}
+    .button-row{display:flex;flex-wrap:wrap;gap:13px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 23px;border-radius:28px;text-decoration:none;font-size:.88rem;font-weight:700;transition:.2s;border:1px solid var(--gold)}
+    .btn-primary{background:var(--gold);color:#111}.btn-primary:hover{background:transparent;color:var(--gold)}
+    .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.35)}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    section{padding:96px 0}.section-alt{background:#101010}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 48px}.section-head h2{font-size:clamp(2rem,4vw,2.7rem);margin:8px 0 10px}.section-head p{color:var(--muted);font-size:.94rem}
+    .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;align-items:center}
+    .profile-frame{padding:12px;border:1px solid var(--line);border-radius:16px;background:var(--surface);max-width:390px;margin:auto}
+    .profile-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:10px}
+    .about-copy h3{font-size:1.55rem;margin-bottom:15px}.about-copy p{color:#bdbdbd;margin-bottom:15px;font-size:.94rem}
+    .facts{list-style:none;margin:22px 0}.facts li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.9rem;color:#ccc}.facts strong{color:var(--gold);display:inline-block;min-width:125px}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .skill-card,.project-card,.service-card,.timeline-card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:27px;transition:transform .25s,border-color .25s}
+    .skill-card:hover,.project-card:hover,.service-card:hover{transform:translateY(-5px);border-color:rgba(255,189,57,.65)}
+    .card-kicker{color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase}
+    .skill-card h3,.service-card h3{font-size:1.15rem;margin:10px 0}.skill-card p,.service-card p{color:var(--muted);font-size:.87rem}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}.tags span{font-size:.75rem;color:#eee;background:#222;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:5px 10px}
+    .learning{display:inline-block;margin-top:15px;color:var(--gold);font-size:.75rem;font-weight:600}
+    .timeline{max-width:900px;margin:auto;display:grid;gap:20px}.timeline-card{padding:30px}.timeline-meta{color:var(--gold);font-size:.8rem;font-weight:600}.timeline-card h3{font-size:1.25rem;margin:7px 0 3px}.timeline-card h4{font-size:.92rem;color:#c7c7c7;font-weight:500;margin-bottom:14px}.timeline-card ul{padding-left:20px;color:#bbb;font-size:.88rem}.timeline-card li{margin:7px 0}
+    .education{margin-top:26px;padding:22px 26px;background:#111;border-left:3px solid var(--gold);border-radius:8px}.education p{color:#bbb;font-size:.9rem}
+    .filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 auto 15px}.filter-btn{background:transparent;border:1px solid var(--line);color:#eee;padding:9px 18px;border-radius:25px;cursor:pointer;font:inherit;font-size:.8rem;transition:.2s}.filter-btn:hover,.filter-btn.active{background:var(--gold);color:#111;border-color:var(--gold)}
+    .filter-status{text-align:center;color:var(--muted);font-size:.78rem;margin-bottom:28px}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .project-card{display:flex;flex-direction:column;min-height:330px}.project-card[hidden]{display:none!important}.project-number{color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:1.4px}.project-card h3{font-size:1.18rem;margin:10px 0}.project-card p{color:var(--muted);font-size:.86rem;flex:1}.project-links{display:flex;flex-wrap:wrap;gap:15px;margin-top:22px}.project-links a{font-size:.8rem;color:var(--gold);font-weight:600;text-decoration:none}.project-links a:hover{text-decoration:underline}
+    .planned{border-style:dashed}.planned .project-number{color:#d8b66e}
+    .services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.service-card{padding:24px}.service-card i{font-size:1.7rem;color:var(--gold);margin-bottom:13px}.service-card h3{font-size:1rem}.service-card ul{padding-left:18px;margin-top:12px;color:#aaa;font-size:.8rem}.service-card li{margin:5px 0}
+    .engagement{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}.engagement>div{background:#191919;border:1px solid var(--line);padding:22px;border-radius:10px}.engagement strong{display:block;color:var(--gold);margin-bottom:5px}.engagement p{font-size:.85rem;color:#bbb}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center}.contact-card i{font-size:1.5rem;color:var(--gold);margin-bottom:12px}.contact-card h3{font-size:1rem;margin-bottom:5px}.contact-card a,.contact-card p{font-size:.84rem;color:#bbb;text-decoration:none;overflow-wrap:anywhere}.contact-card a:hover{color:var(--gold)}
+    .contact-cta{text-align:center;margin-top:35px}.contact-cta p{color:var(--muted);margin-bottom:20px}
+    footer{padding:26px 0;text-align:center;background:#050505;border-top:1px solid rgba(255,255,255,.06);color:#888;font-size:.78rem}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    @media(max-width:950px){.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{gap:32px}}
+    @media(max-width:700px){.nav-wrap{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#0b0b0b;border-bottom:1px solid var(--line);padding:15px 5% 22px;flex-direction:column;gap:0}.nav-links.open{display:flex}.nav-links a{display:block;padding:10px 0}.hero{min-height:720px;min-height:90svh;padding:120px 0 70px}.hero p{font-size:.92rem}section{padding:75px 0}.about-grid{grid-template-columns:1fr}.profile-frame{max-width:280px}.skills-grid,.projects-grid,.services-grid,.contact-grid{grid-template-columns:1fr}.engagement{grid-template-columns:1fr}.skill-card,.project-card,.service-card{padding:22px}.project-card{min-height:0}.facts strong{min-width:110px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home">Anshul<span>.Jain</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" id="site-navigation">
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#freelance">Freelance</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="container"><div class="hero-copy">
+      <span class="eyebrow">Welcome to my portfolio</span>
+      <h1>I'm <span>Anshul Jain</span></h1>
+      <h2>Data Analyst <span class="gold">|</span> BI &amp; Survey Analytics</h2>
+      <p>I turn business data into meaningful insights using SQL, Python, Advanced Excel, Power BI and Tableau. My work spans business intelligence, survey analytics, reporting and data preparation, while I continue building practical skills in data science and AI.</p>
+      <div class="button-row"><a class="btn btn-primary" href="#projects">Explore Projects <i class="fa-solid fa-arrow-right"></i></a><a class="btn btn-outline" href="Anshul_Jain_Data_Analyst_Data_Scientist_Resume.pdf" target="_blank" rel="noopener">View Resume <i class="fa-solid fa-file-pdf"></i></a></div>
+    </div></div>
+  </section>
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/portfolio-enhancements.css">
-
-
-
-<style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
-
-
-/* project image zoom effect */
-
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
-
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
-
-</style>
-
-
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Anshul Jain</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
-		          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-              <li class="nav-item"><a href="#freelance-section" class="nav-link"><span>Freelance</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Anshul Jain</span></h1>
-
-
-                        <h2 class="portfolio-home-headline">Data Analyst | Data Scientist | AI &amp; Machine Learning Enthusiast</h2>
-                        <p class="portfolio-home-intro">I turn raw data into meaningful business insights using SQL, Python, Power BI and Tableau. I enjoy solving real-world problems through data analysis and reporting, while building deeper practical skills in predictive modelling and AI applications.</p>
-
-						<br>
-						<br>
-			            
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 3 years of experience</h2> -->
-						<!-- <br> -->
-			            <!-- <p><a href="https://www.youtube.com/@RishabhMishraOfficial" class="btn btn-primary py-3 px-4">YouTube</a>  -->
-							<a href="#project-section" class="btn btn-white btn-outline-white py-3 px-4">View Projects</a>
-                            <a href="#freelance-section" class="btn btn-primary py-3 px-4 portfolio-hero-hire">Freelance Enquiries</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Anshul Jain</span></p>
-										<p><span class="title-s">Job Role: </span> <span>Data Analyst</span></p>
-										<p><span class="title-s">Experience: </span> <span>3+ Years</span></p>
-										<p><span class="title-s">Location: </span> <span>Gurugram, India</span></p>
-									  </div>
-									</div>
-								  </div>
-
-                                <div class="skill-mf portfolio-about-skills">
-                                    <p class="title-s">Core Skills</p>
-                                    <div class="portfolio-skill-tags">
-                                        <span>SQL</span><span>Python</span><span>Advanced Excel</span>
-                                        <span>Power BI</span><span>Tableau</span><span>Statistics</span>
-                                        <span>EDA</span><span>Machine Learning</span><span>Survey Analytics</span>
-                                    </div>
-                                </div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>I am a Data Analyst with experience in data analytics, business intelligence, survey analytics and reporting automation.</p>
-                                <p>I have worked with SQL, Python, Advanced Excel, Power BI and Tableau to transform complex datasets into meaningful insights and actionable business recommendations.</p>
-                                <p>My experience includes working with employee engagement survey data, HR analytics, customer behaviour, business performance and operational reporting. I also have an interest in predictive analytics, machine learning and AI-powered solutions.</p>
-                                <p>I enjoy solving real-world business problems through data and continuously expanding my technical skills.</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Core Areas:</span> <span>Data Analytics, Business Intelligence, Statistical Analysis, Machine Learning and AI Applications</span></li>
-									<li class="d-flex"><span>Domain:</span> <span>Sales, HR, Fraud, Customer,&amp; Operational Analytics</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Arts, Jiwaji University</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
-									<li class="d-flex"><span>BI Tools:</span> <span>Power BI, Tableau</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>ETL, Data Validation, Python Libraries, Cloud Fundamentals</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography, Dancing</span></li>
-									
-								</ul>
-							</div>
-						</div>
-
-
-                        <div class="counter-wrap ftco-animate d-flex mt-md-3">
-                            <div class="text">
-                                <p><a href="https://www.linkedin.com/in/anshul-jain-879359361/" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-                            </div>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
-
-
-
-	
-
-    <!-- Skills section -->
-    <section class="ftco-section portfolio-skills-section" id="skills-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-8 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Skills</h1>
-            <h2 class="mb-4">Technical Skills</h2>
-            <p>Tools and technologies I use for data analysis, business intelligence and predictive analytics.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="portfolio-skill-card">
-              <span class="portfolio-skill-kicker">01 / ANALYTICS</span>
-              <h3>Data Analytics &amp; BI</h3>
-              <p>Turning business data into clear reports, dashboards and actionable insights.</p>
-              <div class="portfolio-skill-tags">
-                <span>SQL</span><span>Advanced Excel</span><span>Power BI</span>
-                <span>Tableau</span><span>Python</span><span>Statistics</span>
-                <span>EDA</span><span>Data Visualization</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="portfolio-skill-card">
-              <span class="portfolio-skill-kicker">02 / PREDICTIVE ANALYTICS</span>
-              <h3>Data Science &amp; Machine Learning</h3>
-              <p>Using Python for exploratory analysis and developing practical experience with model training and evaluation.</p>
-              <div class="portfolio-skill-tags">
-                <span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
-                <span>Seaborn</span><span>Scikit-learn</span><span>Regression fundamentals</span>
-                <span>Classification fundamentals</span>
-              </div>
-              <span class="portfolio-learning-note">Building end-to-end predictive modelling projects</span>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="portfolio-skill-card">
-              <span class="portfolio-skill-kicker">03 / DATA PLATFORMS</span>
-              <h3>Data Engineering &amp; Cloud</h3>
-              <p>Working with relational databases, SQL-based data preparation and reporting workflows.</p>
-              <div class="portfolio-skill-tags">
-                <span>ETL</span><span>MySQL</span><span>PostgreSQL</span>
-                <span>SQL Server</span><span>BigQuery</span><span>Azure</span>
-              </div>
-              <span class="portfolio-learning-note">Currently expanding familiarity with AWS, PySpark and Databricks</span>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6 mb-4">
-            <div class="portfolio-skill-card">
-              <span class="portfolio-skill-kicker">04 / CURRENT LEARNING</span>
-              <h3>AI &amp; Generative AI</h3>
-              <p>Currently developing foundational knowledge and practical skills in modern AI tools.</p>
-              <div class="portfolio-skill-tags">
-                <span>Generative AI</span><span>LLM Fundamentals</span>
-                <span>Prompt Engineering</span><span>AI Agents</span>
-                <span>RAG Fundamentals</span>
-              </div>
-              <span class="portfolio-learning-note">Currently learning</span>
-            </div>
-          </div>
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">A little about me</span><h2>About <span class="gold">Me</span></h2><p>My professional background, interests and approach to solving data problems.</p></div>
+      <div class="about-grid">
+        <div class="profile-frame"><img src="images/about-me.png" alt="Anshul Jain profile portrait" loading="lazy"></div>
+        <div class="about-copy">
+          <h3>Data professional focused on useful business insights</h3>
+          <p>I am a Data Analyst with experience in data analytics, business intelligence, survey analytics and reporting support.</p>
+          <p>I have worked with SQL, Python, Advanced Excel, Power BI and Tableau to prepare and analyse datasets, build reports and communicate findings. My experience includes HR and recruitment analytics, employee engagement survey work, customer behaviour and retail/business performance projects.</p>
+          <p>I am also developing my skills in predictive analytics, machine learning and AI applications through practical learning and portfolio projects.</p>
+          <ul class="facts">
+            <li><strong>Experience</strong> 3+ years in data analytics</li>
+            <li><strong>Current role</strong> Engagement Surveys Analyst · Marsh McLennan</li>
+            <li><strong>Location</strong> Gurugram, India</li>
+            <li><strong>Education</strong> Bachelor of Arts · Jiwaji University</li>
+            <li><strong>Focus areas</strong> BI, survey analytics, HR, retail and customer analytics</li>
+          </ul>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/anshul-jain-879359361/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> Connect on LinkedIn</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Professional Experience</h2>
-            <p>Data Analyst with experience in business intelligence, survey analytics, reporting automation and data-driven problem solving. Building further expertise in data science and machine learning.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">May 2026 – Present</span>
-              <h2>Specialist – Career Consulting Delivery</h2>
-              <span class="position">Marsh McLennan</span>
-              <ul class="mt-4">
-                <li>Support global employee engagement survey projects, including questionnaire setup, testing and deployment.</li>
-                <li>Work with survey and HR datasets, supporting analysis and reporting using Excel, SQL and Python.</li>
-                <li>Contribute to reporting and visualisation workflows using Power BI and Tableau.</li>
-                <li>Perform data validation and support reporting automation to improve data quality and delivery consistency.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">January 2022 – June 2025</span>
-              <h2>Data Analyst</h2>
-              <span class="position">K-Tek Talent Solutions LLP</span>
-              <ul class="mt-4">
-                <li>Developed Power BI and Tableau dashboards to track HR and recruitment metrics, hiring trends and workforce allocation.</li>
-                <li>Automated data extraction, cleaning and transformation workflows using SQL and Python.</li>
-                <li>Performed exploratory data analysis and statistical analysis to identify patterns and support business decisions.</li>
-                <li>Used SQL, Python and Advanced Excel for reporting, data validation and actionable business insights.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col-md-12">
-            <h2 class="big-4">Education</h2>
-            <div class="underline"></div>
-          </div>
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2017 – 2020</span>
-              <h2>Bachelor of Arts (B.A.)</h2>
-              <span class="position">Jiwaji University, Gwalior</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p><a href="Anshul_Jain_Data_Analyst_Data_Scientist_Resume.pdf" download class="btn btn-primary py-4 px-5">Download Combined Resume</a></p>
-          </div>
-        </div>
+  <section class="section-alt" id="skills">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">What I work with</span><h2>Technical <span class="gold">Skills</span></h2><p>Hands-on tools and areas of ongoing learning, presented separately for clarity.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><span class="card-kicker">01 / Analytics &amp; BI</span><h3>Data Analytics &amp; Business Intelligence</h3><p>Preparing data, analysing business questions and presenting findings through reports and dashboards.</p><div class="tags"><span>SQL</span><span>Advanced Excel</span><span>Power BI</span><span>Tableau</span><span>Statistics</span><span>EDA</span><span>Data Visualisation</span></div></article>
+        <article class="skill-card"><span class="card-kicker">02 / Programming</span><h3>Python &amp; Data Analysis</h3><p>Using Python and common data libraries for data cleaning, exploration and analysis.</p><div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter Notebook</span></div></article>
+        <article class="skill-card"><span class="card-kicker">03 / Data Platforms</span><h3>Databases &amp; Data Workflows</h3><p>Working with relational data, SQL-based preparation, validation and reporting workflows.</p><div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>SQL Server</span><span>BigQuery</span><span>ETL Fundamentals</span><span>Azure</span></div><span class="learning">Expanding knowledge: AWS, PySpark &amp; Databricks</span></article>
+        <article class="skill-card"><span class="card-kicker">04 / Current Learning</span><h3>Data Science &amp; Generative AI</h3><p>Building practical foundations through structured learning and portfolio exercises.</p><div class="tags"><span>Scikit-learn Fundamentals</span><span>Regression</span><span>Classification</span><span>Model Evaluation</span><span>LLM Fundamentals</span><span>Prompt Engineering</span><span>RAG Concepts</span></div><span class="learning">Learning and project development in progress</span></article>
       </div>
-    </section>
+    </div>
+  </section>
 
-   
-
-
-    <section class="ftco-section portfolio-projects-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-4 pb-2">
-          <div class="col-md-8 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Featured Projects</h2>
-            <p>Explore selected projects across business intelligence, data analytics and machine learning.</p>
-          </div>
-        </div>
-
-        <div class="portfolio-project-filters" role="group" aria-label="Filter projects by role">
-          <button class="portfolio-filter-btn is-active" type="button" data-project-filter="all" aria-pressed="true">All Projects</button>
-          <button class="portfolio-filter-btn" type="button" data-project-filter="analyst" aria-pressed="false">Data Analyst</button>
-          <button class="portfolio-filter-btn" type="button" data-project-filter="scientist" aria-pressed="false">Data Science</button>
-          <button class="portfolio-filter-btn" type="button" data-project-filter="ai" aria-pressed="false">AI Engineering</button>
-        </div>
-        <p class="portfolio-filter-status" id="project-filter-status" aria-live="polite">Showing all projects and planned builds</p>
-
-        <div class="row portfolio-project-grid" id="portfolio-project-grid">
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="analyst">
-            <article class="portfolio-project-card">
-              <div class="portfolio-project-number">PROJECT 01</div>
-              <span class="portfolio-project-category">RISK ANALYTICS · EDA</span>
-              <h3>Riskified Fraud Risk Analysis</h3>
-              <p>Analysed transaction data to identify fraud patterns and explore order approval strategies using Python.</p>
-              <div class="portfolio-project-tags"><span>Python</span><span>Pandas</span><span>EDA</span></div>
-              <a href="projects/riskified-fraud-analysis.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="analyst">
-            <article class="portfolio-project-card">
-              <div class="portfolio-project-number">PROJECT 02</div>
-              <span class="portfolio-project-category">CUSTOMER ANALYTICS · EDA</span>
-              <h3>Customer Churn Analysis</h3>
-              <p>Explored customer churn patterns across contract types, payments, tenure and demographics to identify retention insights.</p>
-              <div class="portfolio-project-tags"><span>Python</span><span>Pandas</span><span>Data Analysis</span></div>
-              <a href="projects/customer-churn-analysis.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="analyst">
-            <article class="portfolio-project-card">
-              <div class="portfolio-project-number">PROJECT 03</div>
-              <span class="portfolio-project-category">BUSINESS INTELLIGENCE</span>
-              <h3>Madhav Store Sales Dashboard</h3>
-              <p>Designed a Power BI dashboard to track online sales performance and business trends across India.</p>
-              <div class="portfolio-project-tags"><span>Power BI</span><span>Dashboarding</span><span>Sales Analytics</span></div>
-              <a href="projects/madhav-store-dashboard.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="analyst">
-            <article class="portfolio-project-card">
-              <div class="portfolio-project-number">PROJECT 04</div>
-              <span class="portfolio-project-category">BUSINESS INTELLIGENCE</span>
-              <h3>Blinkit Sales Analysis</h3>
-              <p>Built an interactive Power BI report with DAX-driven KPIs for sales, customer trends and product performance.</p>
-              <div class="portfolio-project-tags"><span>Power BI</span><span>DAX</span><span>Data Modeling</span></div>
-              <a href="projects/blinkit-sales-dashboard.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="analyst">
-            <article class="portfolio-project-card">
-              <div class="portfolio-project-number">PROJECT 05</div>
-              <span class="portfolio-project-category">SQL ANALYTICS</span>
-              <h3>HR SQL Analysis</h3>
-              <p>Used SQL queries, joins, aggregations and window functions to explore workforce and HR metrics.</p>
-              <div class="portfolio-project-tags"><span>SQL</span><span>Joins</span><span>Window Functions</span></div>
-              <a href="projects/hr-sql-analytics.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="scientist">
-            <article class="portfolio-project-card portfolio-planned-card">
-              <div class="portfolio-project-number">NEXT BUILD</div>
-              <span class="portfolio-project-category">DATA SCIENCE · IN PROGRESS</span>
-              <h3>Customer Churn Prediction</h3>
-              <p>Planned extension: train and evaluate churn prediction models, compare baselines and explain customer-risk drivers.</p>
-              <div class="portfolio-project-tags"><span>Scikit-learn</span><span>Model Evaluation</span><span>Explainability</span></div>
-              <span class="portfolio-project-link portfolio-project-status">In progress — not yet published</span>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="ai">
-            <article class="portfolio-project-card portfolio-planned-card">
-              <div class="portfolio-project-number">NEXT BUILD</div>
-              <span class="portfolio-project-category">AI ENGINEERING · PLANNED</span>
-              <h3>AI Document Assistant (RAG)</h3>
-              <p>Planned prototype: ask questions about uploaded documents and receive answers with source references.</p>
-              <div class="portfolio-project-tags"><span>Python</span><span>LLM</span><span>RAG</span><span>FastAPI</span></div>
-              <span class="portfolio-project-link portfolio-project-status">Planned — not yet published</span>
-            </article>
-          </div>
-        </div>
+  <section id="experience">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Career journey</span><h2>Professional <span class="gold">Experience</span></h2><p>Experience in analytics delivery, reporting and data-driven problem solving.</p></div>
+      <div class="timeline">
+        <article class="timeline-card">
+          <span class="timeline-meta">MAY 2026 – PRESENT</span><h3>Engagement Surveys Analyst</h3><h4>Marsh McLennan · Career Consulting Delivery</h4>
+          <ul><li>Support employee engagement survey projects, including questionnaire preparation, testing and survey data quality checks.</li><li>Work with survey and HR datasets to support analysis, reporting and project delivery.</li><li>Contribute to reporting and visualisation workflows using spreadsheet and business intelligence tools.</li><li>Support data validation and process improvements to maintain reporting quality and consistency.</li></ul>
+        </article>
+        <article class="timeline-card">
+          <span class="timeline-meta">JANUARY 2022 – JUNE 2025</span><h3>Data Analyst</h3><h4>K-Tek Talent Solutions LLP</h4>
+          <ul><li>Developed Power BI and Tableau dashboards for HR and recruitment metrics, hiring trends and workforce reporting.</li><li>Used SQL and Python for data extraction, cleaning, transformation and reporting workflows.</li><li>Performed exploratory data analysis to identify patterns and support business discussions.</li><li>Worked with stakeholders to understand reporting requirements and improve data quality.</li></ul>
+        </article>
       </div>
-    </section>
+      <div class="education"><span class="card-kicker">EDUCATION</span><h3>Bachelor of Arts (B.A.)</h3><p>Jiwaji University, Gwalior · 2017–2020</p></div>
+    </div>
+  </section>
 
-	
-    <section class="ftco-section portfolio-freelance-section" id="freelance-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-8 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Freelance</h1>
-            <h2 class="mb-4">How I Can Help Your Business</h2>
-            <p>Practical data support for teams that need cleaner data, clearer reporting and better business decisions.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4"><article class="portfolio-service-card">
-            <span class="portfolio-skill-kicker">01 / DATA PREPARATION</span><h3>Data Cleaning &amp; Analysis</h3>
-            <p>Clean, validate and explore Excel, CSV and business datasets to uncover useful patterns.</p>
-            <ul><li>Data quality checks</li><li>Exploratory analysis</li><li>Findings summary</li></ul>
-          </article></div>
-          <div class="col-md-6 col-lg-3 mb-4"><article class="portfolio-service-card">
-            <span class="portfolio-skill-kicker">02 / BUSINESS INTELLIGENCE</span><h3>Power BI Dashboards</h3>
-            <p>Turn operational and sales data into interactive reports that make performance easier to understand.</p>
-            <ul><li>KPI design</li><li>Power Query &amp; DAX</li><li>Dashboard development</li></ul>
-          </article></div>
-          <div class="col-md-6 col-lg-3 mb-4"><article class="portfolio-service-card">
-            <span class="portfolio-skill-kicker">03 / REPORTING</span><h3>SQL &amp; Excel Reporting</h3>
-            <p>Build repeatable reports and answer business questions with structured queries and spreadsheets.</p>
-            <ul><li>SQL queries</li><li>Excel reporting</li><li>Recurring report support</li></ul>
-          </article></div>
-          <div class="col-md-6 col-lg-3 mb-4"><article class="portfolio-service-card">
-            <span class="portfolio-skill-kicker">04 / PEOPLE ANALYTICS</span><h3>Survey &amp; HR Analytics</h3>
-            <p>Support survey data preparation, response quality checks and people analytics reporting.</p>
-            <ul><li>Survey data validation</li><li>Engagement reporting</li><li>Trend analysis</li></ul>
-          </article></div>
-        </div>
-        <div class="portfolio-engagement-options">
-          <div><strong>Project-based work</strong><span>Defined scope, milestones and handover for one-time analytics or dashboard assignments.</span></div>
-          <div><strong>Long-term remote support</strong><span>Ongoing reporting, dashboard maintenance, data-quality checks and recurring analysis support.</span></div>
-        </div>
-        <div class="portfolio-freelance-note text-center">
-          <p>Share your business question, dataset, expected deliverables and preferred timeline. I can discuss both one-off projects and longer-term remote engagements.</p>
-          <a href="mailto:jainanshul387@gmail.com?subject=Freelance%20Data%20Project%20Enquiry" class="btn btn-primary py-3 px-4">Discuss a Project</a>
-        </div>
+  <section class="section-alt" id="projects">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Selected work</span><h2>Featured <span class="gold">Projects</span></h2><p>Open a case study to understand the objective, approach and project files. Exploratory analysis is labelled separately from predictive modelling.</p></div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Projects</button>
+        <button class="filter-btn" type="button" data-filter="analyst" aria-pressed="false">Data Analyst &amp; BI</button>
+        <button class="filter-btn" type="button" data-filter="scientist" aria-pressed="false">Data Science</button>
+        <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI Engineering</button>
       </div>
-    </section>
-
-    <section class="ftco-section portfolio-collab-cta">
-      <div class="container text-center">
-        <h2>Let's turn your data into <span>decisions</span></h2>
-        <p>Explore my code and project work, or get in touch to discuss an analytics requirement.</p>
-        <a href="https://github.com/Anshuljain17-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-outline-white py-3 px-4">Explore GitHub</a>
-        <a href="mailto:jainanshul387@gmail.com?subject=Portfolio%20Enquiry" class="btn btn-primary py-3 px-4">Contact Me</a>
+      <p class="filter-status" id="filter-status" aria-live="polite">Showing all projects and planned builds</p>
+      <div class="projects-grid" id="projects-grid">
+        <article class="project-card" data-category="analyst"><span class="project-number">PROJECT 01 · FRAUD &amp; RISK</span><h3>Riskified Fraud Risk Analysis</h3><p>Exploratory analysis of e-commerce transaction patterns, chargebacks, product types and approval-threshold trade-offs. This is an EDA project, not a deployed fraud-classification model.</p><div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>EDA</span></div><div class="project-links"><a href="projects/riskified-fraud-analysis.html">Read case study ↗</a><a href="https://github.com/Anshuljain17-cmd/Finance-and-Investment-Analytics/blob/main/Riskified%20Data%20Analysis%20SOLUTON-checkpoint.ipynb" target="_blank" rel="noopener noreferrer">GitHub notebook ↗</a></div></article>
+        <article class="project-card" data-category="analyst"><span class="project-number">PROJECT 02 · CUSTOMER INSIGHTS</span><h3>Telecom Customer Churn Analysis</h3><p>Exploratory analysis of 7,043 telecom customer records to examine churn patterns across contracts, payment methods, tenure and customer segments.</p><div class="tags"><span>Python</span><span>Pandas</span><span>Visualisation</span><span>EDA</span></div><div class="project-links"><a href="projects/customer-churn-analysis.html">Read case study ↗</a><a href="https://github.com/Anshuljain17-cmd/Customer-Churn-analysis" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a></div></article>
+        <article class="project-card" data-category="analyst"><span class="project-number">PROJECT 03 · RETAIL BI</span><h3>Blinkit Sales Dashboard</h3><p>Power BI reporting project covering sales performance, item mix, outlet characteristics and customer ratings with DAX and Power Query.</p><div class="tags"><span>Power BI</span><span>DAX</span><span>Power Query</span></div><div class="project-links"><a href="projects/blinkit-sales-dashboard.html">Read case study ↗</a><a href="https://github.com/Anshuljain17-cmd/Blinkit-Sales-Analysis" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a></div></article>
+        <article class="project-card" data-category="analyst"><span class="project-number">PROJECT 04 · RETAIL BI</span><h3>Madhav Store Sales Dashboard</h3><p>Power BI dashboard project for exploring retail sales performance and presenting business metrics in a visual report.</p><div class="tags"><span>Power BI</span><span>Sales Analytics</span><span>Dashboard Design</span></div><div class="project-links"><a href="projects/madhav-store-dashboard.html">Read case study ↗</a><a href="https://github.com/Anshuljain17-cmd/E-Commerce-and-Retail-Analytics" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a></div></article>
+        <article class="project-card" data-category="analyst"><span class="project-number">PROJECT 05 · SQL ANALYTICS</span><h3>HR SQL Analytics</h3><p>SQL analysis of a sample workforce dataset, covering headcount, salary distribution, hiring trends and employee performance.</p><div class="tags"><span>SQL</span><span>Joins</span><span>Aggregations</span><span>Window Functions</span></div><div class="project-links"><a href="projects/hr-sql-analytics.html">Read case study ↗</a><a href="https://github.com/Anshuljain17-cmd/HR-SQL-Analysis" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a></div></article>
+        <article class="project-card planned" data-category="scientist"><span class="project-number">NEXT BUILD · IN PROGRESS</span><h3>Customer Churn Prediction</h3><p>Planned extension of the churn EDA: build a reproducible modelling workflow, compare baseline models and evaluate performance. Not yet published.</p><div class="tags"><span>Scikit-learn</span><span>Classification</span><span>Model Evaluation</span></div><div class="project-links"><span class="learning">In progress — no model results claimed</span></div></article>
+        <article class="project-card planned" data-category="ai"><span class="project-number">NEXT BUILD · PLANNED</span><h3>AI Document Assistant (RAG)</h3><p>Planned learning project to build a document question-answering prototype with source-grounded responses. Not yet implemented or deployed.</p><div class="tags"><span>Python</span><span>LLM Concepts</span><span>RAG</span></div><div class="project-links"><span class="learning">Planned — not yet published</span></div></article>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <section id="freelance">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Work with me</span><h2>Freelance <span class="gold">Services</span></h2><p>Practical analytics support for clients who need reliable data preparation, reporting and clear business insights.</p></div>
+      <div class="services-grid">
+        <article class="service-card"><i class="fa-solid fa-chart-column" aria-hidden="true"></i><h3>Data Cleaning &amp; Analysis</h3><p>Prepare and explore Excel, CSV and business datasets.</p><ul><li>Data quality checks</li><li>Exploratory analysis</li><li>Findings summary</li></ul></article>
+        <article class="service-card"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i><h3>Power BI Dashboards</h3><p>Present business performance through interactive reports.</p><ul><li>KPI reporting</li><li>Power Query &amp; DAX</li><li>Dashboard development</li></ul></article>
+        <article class="service-card"><i class="fa-solid fa-database" aria-hidden="true"></i><h3>SQL &amp; Excel Reporting</h3><p>Answer business questions with structured queries and spreadsheets.</p><ul><li>SQL queries</li><li>Excel reporting</li><li>Recurring report support</li></ul></article>
+        <article class="service-card"><i class="fa-solid fa-people-group" aria-hidden="true"></i><h3>Survey &amp; HR Analytics</h3><p>Support survey data preparation, quality checks and people analytics reporting.</p><ul><li>Survey data validation</li><li>Engagement reporting</li><li>Trend analysis</li></ul></article>
+      </div>
+      <div class="engagement"><div><strong>Project-based work</strong><p>Defined scope, milestones and handover for one-time analytics or dashboard assignments.</p></div><div><strong>Long-term remote support</strong><p>Ongoing reporting, dashboard maintenance, data-quality checks and recurring analysis support.</p></div></div>
+      <div class="contact-cta"><p>Share your business question, dataset and expected deliverables to discuss a suitable scope.</p><a class="btn btn-primary" href="mailto:jainanshul387@gmail.com?subject=Freelance%20Data%20Project%20Enquiry">Discuss a Project <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+  </section>
 
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Gurgaon, India</p>
-	          </div>
-          </div>
-                    <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center"><span class="icon-briefcase"></span></div>
-              <h3 class="mb-4">Freelance Work</h3>
-              <p><a href="#freelance-section">View services &amp; deliverables</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:jainanshul387@gmail.com">jainanshul387@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="Anshul_Jain_Data_Analyst_Data_Scientist_Resume.pdf" download>Download PDF</a></p>
-	          </div>
-          </div>
-
-		  <div class="container">
-			<br>
-			<br>
-			<!-- <div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2> -->
-				</div>
-			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/anshul-jain-879359361/"><span class="icon-linkedin"></span></a></li>  
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li> -->
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li> -->
-				      <!-- <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li>
-					</ul> -->
-				<br>
-		   </div>
-   </div>
- </section>
-
-
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-  <script src="js/portfolio-filters.js"></script>
-    
-  </body>
+  <section class="section-alt" id="contact">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Let's connect</span><h2>Get in <span class="gold">Touch</span></h2><p>For data analytics opportunities, freelance projects and professional conversations.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><i class="fa-solid fa-envelope" aria-hidden="true"></i><h3>Email</h3><a href="mailto:jainanshul387@gmail.com">jainanshul387@gmail.com</a></div>
+        <div class="contact-card"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/anshul-jain-879359361/" target="_blank" rel="noopener noreferrer">Connect with me</a></div>
+        <div class="contact-card"><i class="fa-brands fa-github" aria-hidden="true"></i><h3>GitHub</h3><a href="https://github.com/Anshuljain17-cmd" target="_blank" rel="noopener noreferrer">Explore repositories</a></div>
+      </div>
+      <div class="contact-cta"><a class="btn btn-outline" href="Anshul_Jain_Data_Analyst_Data_Scientist_Resume.pdf" target="_blank" rel="noopener">View Combined Resume <i class="fa-solid fa-file-pdf"></i></a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="container">© <span id="year">2026</span> Anshul Jain · Built with HTML, CSS &amp; JavaScript</div></footer>
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    const toggle=document.querySelector('.menu-toggle');
+    const nav=document.querySelector('.nav-links');
+    if(toggle&&nav){
+      toggle.addEventListener('click',function(){
+        const open=nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded',String(open));
+        toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+        toggle.innerHTML=open?'<i class="fa-solid fa-xmark" aria-hidden="true"></i>':'<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+      });
+      nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');toggle.innerHTML='<i class="fa-solid fa-bars" aria-hidden="true"></i>';});});
+    }
+    const buttons=document.querySelectorAll('[data-filter]');
+    const cards=document.querySelectorAll('[data-category]');
+    const status=document.getElementById('filter-status');
+    function applyFilter(filter){
+      let count=0;
+      cards.forEach(function(card){const visible=filter==='all'||card.dataset.category===filter;card.hidden=!visible;if(visible)count++;});
+      buttons.forEach(function(button){const active=button.dataset.filter===filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+      if(status){const label=filter==='all'?'projects and planned builds':filter==='analyst'?'Data Analyst & BI projects':filter==='scientist'?'Data Science builds':'AI Engineering builds';status.textContent='Showing '+count+' '+label;}
+    }
+    buttons.forEach(function(button){button.addEventListener('click',function(){applyFilter(button.dataset.filter);});});
+    applyFilter('all');
+    const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+  });
+</script>
+</body>
 </html>
