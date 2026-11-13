@@ -397,19 +397,20 @@
         <div class="portfolio-project-filters" role="group" aria-label="Filter projects by role">
           <button class="portfolio-filter-btn is-active" type="button" data-project-filter="all" aria-pressed="true">All Projects</button>
           <button class="portfolio-filter-btn" type="button" data-project-filter="analyst" aria-pressed="false">Data Analyst</button>
-          <button class="portfolio-filter-btn" type="button" data-project-filter="scientist" aria-pressed="false">Data Scientist</button>
+          <button class="portfolio-filter-btn" type="button" data-project-filter="scientist" aria-pressed="false">Data Science</button>
+          <button class="portfolio-filter-btn" type="button" data-project-filter="ai" aria-pressed="false">AI Engineering</button>
         </div>
-        <p class="portfolio-filter-status" id="project-filter-status" aria-live="polite">Showing all 5 projects</p>
+        <p class="portfolio-filter-status" id="project-filter-status" aria-live="polite">Showing all projects and planned builds</p>
 
         <div class="row portfolio-project-grid" id="portfolio-project-grid">
-          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="scientist">
+          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="analyst">
             <article class="portfolio-project-card">
               <div class="portfolio-project-number">PROJECT 01</div>
               <span class="portfolio-project-category">DATA SCIENCE</span>
               <h3>Riskified Fraud Detection</h3>
               <p>Analysed transaction data to identify fraud patterns and explore order approval strategies using Python.</p>
               <div class="portfolio-project-tags"><span>Python</span><span>Pandas</span><span>EDA</span></div>
-              <a href="https://github.com/Anshuljain17-cmd/Finance-and-Investment-Analytics/blob/main/Riskified%20Data%20Analysis%20SOLUTON-checkpoint.ipynb" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">Explore project <span aria-hidden="true">↗</span></a>
+              <a href="projects/riskified-fraud-analysis.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
             </article>
           </div>
 
@@ -420,7 +421,7 @@
               <h3>Customer Churn Analysis</h3>
               <p>Explored customer churn patterns across contract types, payments, tenure and demographics to identify retention insights.</p>
               <div class="portfolio-project-tags"><span>Python</span><span>Pandas</span><span>Data Analysis</span></div>
-              <a href="https://github.com/Anshuljain17-cmd/Customer-Churn-analysis" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">Explore project <span aria-hidden="true">↗</span></a>
+              <a href="projects/customer-churn-analysis.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
             </article>
           </div>
 
@@ -442,7 +443,7 @@
               <h3>Blinkit Sales Analysis</h3>
               <p>Built an interactive Power BI report with DAX-driven KPIs for sales, customer trends and product performance.</p>
               <div class="portfolio-project-tags"><span>Power BI</span><span>DAX</span><span>Data Modeling</span></div>
-              <a href="https://github.com/Anshuljain17-cmd/Blinkit-Sales-Analysis" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">Explore project <span aria-hidden="true">↗</span></a>
+              <a href="projects/blinkit-sales-dashboard.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
             </article>
           </div>
 
@@ -453,7 +454,27 @@
               <h3>HR SQL Analysis</h3>
               <p>Used SQL queries, joins, aggregations and window functions to explore workforce and HR metrics.</p>
               <div class="portfolio-project-tags"><span>SQL</span><span>Joins</span><span>Window Functions</span></div>
-              <a href="https://github.com/Anshuljain17-cmd/HR-SQL-Analysis" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">Explore project <span aria-hidden="true">↗</span></a>
+              <a href="projects/hr-sql-analytics.html" class="portfolio-project-link">Read case study <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="scientist">
+            <article class="portfolio-project-card portfolio-planned-card">
+              <div class="portfolio-project-number">NEXT BUILD</div>
+              <span class="portfolio-project-category">DATA SCIENCE · IN PROGRESS</span>
+              <h3>Customer Churn Prediction</h3>
+              <p>Planned extension: train and evaluate churn prediction models, compare baselines and explain customer-risk drivers.</p>
+              <div class="portfolio-project-tags"><span>Scikit-learn</span><span>Model Evaluation</span><span>Explainability</span></div>
+              <span class="portfolio-project-link portfolio-project-status">In progress — not yet published</span>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 portfolio-project-item" data-project-category="ai">
+            <article class="portfolio-project-card portfolio-planned-card">
+              <div class="portfolio-project-number">NEXT BUILD</div>
+              <span class="portfolio-project-category">AI ENGINEERING · PLANNED</span>
+              <h3>AI Document Assistant (RAG)</h3>
+              <p>Planned prototype: ask questions about uploaded documents and receive answers with source references.</p>
+              <div class="portfolio-project-tags"><span>Python</span><span>LLM</span><span>RAG</span><span>FastAPI</span></div>
+              <span class="portfolio-project-link portfolio-project-status">Planned — not yet published</span>
             </article>
           </div>
         </div>
@@ -492,8 +513,12 @@
             <ul><li>Survey data validation</li><li>Engagement reporting</li><li>Trend analysis</li></ul>
           </article></div>
         </div>
+        <div class="portfolio-engagement-options">
+          <div><strong>Project-based work</strong><span>Defined scope, milestones and handover for one-time analytics or dashboard assignments.</span></div>
+          <div><strong>Long-term remote support</strong><span>Ongoing reporting, dashboard maintenance, data-quality checks and recurring analysis support.</span></div>
+        </div>
         <div class="portfolio-freelance-note text-center">
-          <p>Have a reporting or analytics challenge? Share the business question, dataset and expected outcome.</p>
+          <p>Share your business question, dataset, expected deliverables and preferred timeline. I can discuss both one-off projects and longer-term remote engagements.</p>
           <a href="mailto:jainanshul387@gmail.com?subject=Freelance%20Data%20Project%20Enquiry" class="btn btn-primary py-3 px-4">Discuss a Project</a>
         </div>
       </div>
